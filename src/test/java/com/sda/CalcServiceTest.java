@@ -13,6 +13,13 @@ public class CalcServiceTest {
         calcService = new CalcService();
     }
 
+    //null
+    //""
+    //"2 jablka;3 pomarancze;4 pomidory"
+    //"2;a3c;4"
+    //2;-3;1
+    //2000000000;1000000000 -> InvalidArgumentException
+
     @Test
     public void shouldAddDigitsInStringAndProduceResult() {
         //given:
