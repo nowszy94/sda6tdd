@@ -17,14 +17,12 @@ Feature: CalcService
     When I execute calculate method
     Then I get 0 as a result
 
-  Scenario: Should return correct value when mixed with letters text is passed
+  Scenario Outline: Should check miexed values
     Given I initialize CalcService
-    And I pass 3a;2;4;5b value
+    And I pass <text> value
     When I execute calculate method
-    Then I get 14 as a result
-
-  Scenario: Should return correct value when recipe list is pased
-    Given I initialize CalcService
-    And I pass 2 jablka;3 jajka;5zmieniakow value
-    When I execute calculate method
-    Then I get 10 as a result
+    Then I get <result> as a result
+    Examples:
+    | text | result |
+    | 2 jablka;3 jajka;5zmieniakow | 10 |
+    | 3a;2;4;5b                    | 14 |
