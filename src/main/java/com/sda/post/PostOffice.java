@@ -23,6 +23,11 @@ public class PostOffice {
         return userStorage.createNewUser(nickname);
     }
 
+    public boolean sendNewMessage(String from, String to, String message) {
+        return senderService.sendMessage(from, to, message);
+    }
+
+
     public SenderService getSenderService() {
         return senderService;
     }
